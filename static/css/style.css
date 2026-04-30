@@ -367,7 +367,7 @@ textarea:focus, input[type="text"]:focus {
 
 .threat-item {
     font-size: 0.8rem;
-    color: #fca5a5;
+    color: #ff0909;
     margin-bottom: 4px;
 }
 
@@ -423,7 +423,7 @@ textarea:focus, input[type="text"]:focus {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #e6800b;
+    color:#e6800b ;
 }
 
 .about-card p {
