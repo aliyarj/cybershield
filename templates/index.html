@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield — Threat Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🛡️ CyberShield</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Detect Online Threats <span class="highlight">Before They Reach You</span></h1>
+        <p>AI-powered detection of cyberbullying, scams, and malicious links in real time.</p>
+    </section>
+
+    <!-- INPUT SECTION -->
+    <section class="input-section">
+        <div class="input-grid">
+
+            <!-- Text Input -->
+            <div class="card">
+                <h3>📝 Analyze Text / Message</h3>
+                <textarea id="textInput" rows="6" 
+                    placeholder="Paste a suspicious message, comment, or social media post here..."></textarea>
+                <input type="text" id="senderInput" 
+                    placeholder="Sender username / phone / email (optional)"
+                    style="margin-top: 10px"/>
+            </div>
+
+            <!-- URL Input -->
+            <div class="card">
+                <h3>🔗 Analyze a Link / URL</h3>
+                <input type="text" id="urlInput" 
+                    placeholder="https://suspicious-link.com" />
+                <p class="hint">Paste any link to check if it's safe or malicious.</p>
+
+                <!-- Repeat Harassment Info -->
+                <div style="margin-top: 20px; background: #0f172a; border-radius: 8px; padding: 16px;">
+                    <h4 style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 8px;">🚨 Repeat Harassment Detection</h4>
+                    <p style="color: #475569; font-size: 0.8rem; line-height: 1.6;">
+                        Enter the sender's username or contact above. 
+                        If the same sender is flagged 3 or more times, 
+                        CyberShield will automatically trigger a repeat harasser warning.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Analyze Button -->
+        <div class="center">
+            <button class="analyze-btn" onclick="analyze()">
+                🔍 Analyze Now
+            </button>
+        </div>
+    </section>
+
+    <!-- LOADER -->
+    <div id="loader" class="loader" style="display:none;">
+        <div class="spinner"></div>
+        <p>Analyzing for threats...</p>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <section id="resultSection" class="result-section" style="display:none;">
+        <div class="result-card">
+            <h2>Analysis Result</h2>
+
+            <div id="severityBadge" class="badge"></div>
+
+            <div class="threats-box">
+                <h4>⚠️ Threats Found:</h4>
+                <ul id="threatList"></ul>
+            </div>
+
+            <div class="recommendation-box">
+                <h4>✅ Recommendation:</h4>
+                <p id="recommendation"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon">📋</div>
+                <h4>Step 1</h4>
+                <p>Paste a suspicious message or link into the analyzer</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🤖</div>
+                <h4>Step 2</h4>
+                <p>Our AI scans for cyberbullying, scams and malicious URLs</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🛡️</div>
+                <h4>Step 3</h4>
+                <p>Get instant verdict with recommended action to stay safe</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-strip">
+        <div class="stat">
+            <h2>3+</h2>
+            <p>Threat Categories</p>
+        </div>
+        <div class="stat">
+            <h2>AI</h2>
+            <p>Powered Analysis</p>
+        </div>
+        <div class="stat">
+            <h2>Real Time</h2>
+            <p>Detection</p>
+        </div>
+        <div class="stat">
+            <h2>Free</h2>
+            <p>To Use</p>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield — Scan History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🛡️ CyberShield</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="hero" style="padding: 40px 20px 20px;">
+        <h1>Scan <span class="highlight">History</span></h1>
+        <p>All previous threat scans and their verdicts</p>
+    </section>
+
+    <!-- HISTORY TABLE -->
+    <section class="history-section">
+        {% if scans %}
+        <div class="table-wrapper">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Time</th>
+                        <th>Sender</th>
+                        <th>Text / URL</th>
+                        <th>Verdict</th>
+                        <th>Threats</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for scan in scans %}
+                    <tr>
+                        <td>{{ scan.id }}</td>
+                        <td class="time">{{ scan.timestamp.strftime('%d %b %Y %H:%M') }}</td>
+                        <td>{{ scan.sender or '—' }}</td>
+                        <td class="input-preview">
+                            {% if scan.input_text %}
+                                {{ scan.input_text[:60] }}{% if scan.input_text|length > 60 %}...{% endif %}
+                            {% elif scan.input_url %}
+                                {{ scan.input_url[:60] }}{% if scan.input_url|length > 60 %}...{% endif %}
+                            {% else %}
+                                —
+                            {% endif %}
+                        </td>
+                        <td>
+                            <span class="badge-small {{ scan.severity.lower() }}">
+                                {{ scan.severity }}
+                            </span>
+                        </td>
+                        <td class="threats-cell">
+                            {% set threat_list = scan.threats | from_json %}
+                            {% if threat_list %}
+                                {% for threat in threat_list %}
+                                    <div class="threat-item">⚠️ {{ threat[:50] }}{% if threat|length > 50 %}...{% endif %}</div>
+                                {% endfor %}
+                            {% else %}
+                                None
+                            {% endif %}
+                        </td>
+                        <td class="rec-cell">{{ scan.recommendation }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>🔍 No scans yet. Go analyze something!</p>
+            <a href="/" class="analyze-btn" style="text-decoration:none; margin-top: 20px; display:inline-block;">
+                Start Analyzing
+            </a>
+        </div>
+        {% endif %}
+    </section>
+
+</body>
+</html>

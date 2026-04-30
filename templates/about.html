@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield — About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🛡️ CyberShield</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="hero" style="padding: 40px 20px 20px;">
+        <h1>About <span class="highlight">CyberShield</span></h1>
+        <p>Your AI-powered shield against online threats</p>
+    </section>
+
+    <!-- WHAT WE DETECT -->
+    <section class="about-section">
+        <h2 class="section-title">What We Detect</h2>
+        <div class="about-grid">
+
+            <div class="about-card">
+                <div class="about-icon">🧠</div>
+                <h3>Cyberbullying</h3>
+                <p>Our AI detects toxic, abusive, and threatening language in messages and social media posts in real time.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">💸</div>
+                <h3>Scam Messages</h3>
+                <p>We identify common scam patterns like fake prizes, urgent payment requests, and phishing attempts using AI and keyword analysis.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">🔗</div>
+                <h3>Malicious Links</h3>
+                <p>Every URL is checked against Google Safe Browsing database and scanned for suspicious patterns like fake brand domains and IP-based links.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">🚨</div>
+                <h3>Repeat Harassment</h3>
+                <p>CyberShield tracks repeated flagged messages from the same sender and triggers an automatic repeat harasser warning after 3 flags.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOW TO SPOT -->
+    <section class="about-section" style="background: #1e293b; padding: 60px 20px;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 class="section-title">How To Protect Yourself</h2>
+            <div class="tips-grid">
+
+                <div class="tip-card">
+                    <h4>🛑 Cyberbullying</h4>
+                    <ul>
+                        <li>Never respond to abusive messages</li>
+                        <li>Block the sender immediately</li>
+                        <li>Screenshot and report to the platform</li>
+                        <li>Talk to a trusted adult or authority</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>⚠️ Scam Messages</h4>
+                    <ul>
+                        <li>Never share OTP or bank details</li>
+                        <li>Ignore "you've won" messages</li>
+                        <li>Verify sender identity independently</li>
+                        <li>Never send money to strangers online</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>🔗 Suspicious Links</h4>
+                    <ul>
+                        <li>Never click links from unknown senders</li>
+                        <li>Check URL spelling before clicking</li>
+                        <li>Avoid shortened URLs from strangers</li>
+                        <li>Use CyberShield to verify any link</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHERE TO REPORT -->
+    <section class="about-section">
+        <h2 class="section-title">Where To Report</h2>
+        <div class="report-grid">
+
+            <div class="report-card">
+                <h4>📱 Instagram</h4>
+                <p>Go to the profile → Three dots → Report → It's inappropriate</p>
+            </div>
+
+            <div class="report-card">
+                <h4>💬 WhatsApp</h4>
+                <p>Open chat → Three dots → Report → Block contact</p>
+            </div>
+
+            <div class="report-card">
+                <h4>🐦 Twitter / X</h4>
+                <p>Click three dots on tweet → Report tweet → Select reason</p>
+            </div>
+
+            <div class="report-card">
+                <h4>👤 Facebook</h4>
+                <p>Click three dots on post → Find support or report → Select category</p>
+            </div>
+
+            <div class="report-card">
+                <h4>🚔 Cybercrime India</h4>
+                <p>Report at cybercrime.gov.in or call 1930 national helpline</p>
+            </div>
+
+            <div class="report-card">
+                <h4>📧 Email Scams</h4>
+                <p>Forward phishing emails to report@phishing.gov.in</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="about-section" style="background: #1e293b; padding: 60px 20px;">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title">How It Works</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>🤖 LLaMA 3 AI</h4>
+                    <p>Meta's large language model analyzes text for toxic and scam content</p>
+                </div>
+                <div class="tech-card">
+                    <h4>🔍 Google Safe Browsing</h4>
+                    <p>Same technology Chrome uses to flag malicious and phishing URLs</p>
+                </div>
+                <div class="tech-card">
+                    <h4>📊 Pattern Engine</h4>
+                    <p>Custom rule-based system catches new suspicious URLs not yet in databases</p>
+                </div>
+                <div class="tech-card">
+                    <h4>🗄️ Scan History</h4>
+                    <p>Every scan stored in database for tracking and pattern detection over time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
